@@ -13,9 +13,14 @@ const POST = async (request: NextRequest) => {
     const { userName, email, password } = await request.json();
     const user = await createUser({ userName, email, password });
     if (!user) {
-      return NextResponse.json({ staus: 400, error: "User already exists" });
+      return NextResponse.json({
+        success: false,
+        staus: 400,
+        error: "User already exists",
+      });
     }
     return NextResponse.json({
+      success: true,
       status: 201,
       message: "User created",
       user: user,

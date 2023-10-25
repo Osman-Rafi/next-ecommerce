@@ -15,6 +15,18 @@ const Toastify = {
     const notify = type === "default" ? toast : toast[type];
     notify(title, { position, autoClose, hideProgressBar, ...restOptions });
   },
+
+  showServerResponse: (response: {
+    success: boolean;
+    message: string;
+    error: string;
+  }) => {
+    if (response.success) {
+      Toastify.fire(response.message, "success");
+    } else {
+      Toastify.fire(response.error, "error");
+    }
+  },
 };
 
 export default Toastify;

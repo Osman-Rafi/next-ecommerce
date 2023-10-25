@@ -1,22 +1,31 @@
 "use client";
+import { IUser } from "./types";
+import Toastify from "../components/Toastify";
+
 import { useState } from "react";
+import axios from "axios";
 
-interface UserInterface {
-  userName: string | null;
-  email: string | null;
-  password: string | null;
-}
-
-const Login = () => {
-  const [user, setUser] = useState<UserInterface>({
+const Register = () => {
+  const [user, setUser] = useState<IUser>({
     userName: null,
     email: null,
     password: null,
   });
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(user);
+    setLoading(true);
+    const { data } = await axios.post(`/api/user/register`, user);
+    Toastify.showServerResponse(data);
+    if (data.success) {
+      setUser({
+        userName: null,
+        email: null,
+        password: null,
+      });
+    }
+    setLoading(false);
   };
 
   return (
@@ -26,7 +35,7 @@ const Login = () => {
         <input
           required
           className="block border-2 border-slate-500 rounded mb-4"
-          type="email"
+          type="text"
           value={user.userName || ""}
           placeholder="Choose an user name"
           onChange={(e) => setUser({ ...user, userName: e.target.value })}
@@ -48,8 +57,12 @@ const Login = () => {
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
         <div className="flex justify-center">
-          <button type="submit" className="mt-10 bg-orange-400 p-2 rounded">
-            Sign up
+          <button
+            disabled={loading}
+            type="submit"
+            className="mt-10 bg-orange-400 p-2 rounded"
+          >
+            {!loading ? "Sign up" : "Processing..."}
           </button>
         </div>
       </form>
@@ -57,4 +70,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
