@@ -9,11 +9,11 @@ const Toastify = {
       position = "bottom-left",
       autoClose = 5000,
       hideProgressBar = true,
+      ...restOptions
     } = options || {};
 
-    // const notify = actions[type];
     const notify = type === "default" ? toast : toast[type];
-    notify(title, { position, autoClose, hideProgressBar });
+    notify(title, { position, autoClose, hideProgressBar, ...restOptions });
   },
 };
 
