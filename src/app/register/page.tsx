@@ -1,6 +1,6 @@
 "use client";
 import { IUser } from "./types";
-import Toastify from "../components/Toastify";
+import Toastify from "../../components/Toastify";
 
 import { useState } from "react";
 import axios from "axios";
