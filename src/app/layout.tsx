@@ -1,7 +1,9 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <ToastContainer />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          {children}
+          <ToastContainer />
+        </Suspense>
       </body>
     </html>
   );
