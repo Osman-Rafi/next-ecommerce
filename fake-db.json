@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Fabiano",
+      "last_name": "Spelman",
+      "email": "fspelman0@furl.net",
+      "gender": "Male",
+      "ip_address": "125.124.90.206"
+    },
+    {
+      "id": 2,
+      "first_name": "Rosemonde",
+      "last_name": "Diggles",
+      "email": "rdiggles1@bluehost.com",
+      "gender": "Female",
+      "ip_address": "88.117.224.100"
+    },
+    {
+      "id": 3,
+      "first_name": "Phillipe",
+      "last_name": "Merritt",
+      "email": "pmerritt2@arizona.edu",
+      "gender": "Male",
+      "ip_address": "49.21.208.130"
+    },
+    {
+      "id": 4,
+      "first_name": "Joanne",
+      "last_name": "Pflieger",
+      "email": "jpflieger3@msn.com",
+      "gender": "Agender",
+      "ip_address": "32.190.44.148"
+    },
+    {
+      "id": 5,
+      "first_name": "Bar",
+      "last_name": "Phinnessy",
+      "email": "bphinnessy4@paypal.com",
+      "gender": "Genderqueer",
+      "ip_address": "71.101.70.225"
+    }
+  ]
+}
