@@ -1,20 +1,22 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const connect = async () => {
   try {
     mongoose.connect(process.env.MONGO_URL!, {
-      dbName: "next-ecom",
+      dbName: 'next-ecom'
     });
     const connection = mongoose.connection;
 
-    connection.on("connection", () => {
-      console.log("connection established");
+    connection.on('connection', () => {
+      console.log('connection established');
     });
 
-    connection.on("error", () => {
-      console.log("connection error");
+    connection.on('error', () => {
+      console.log('connection error');
     });
-  } catch (error) {}
+  } catch (error) {
+    //
+  }
 };
 
 export { connect };

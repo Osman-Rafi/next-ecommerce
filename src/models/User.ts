@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
@@ -7,20 +7,20 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   userName: {
     type: String,
-    required: [true, "Provide an username"],
-    unique: true,
+    required: [true, 'Provide an username'],
+    unique: true
   },
   email: String,
   password: String,
   isVerified: {
     type: Boolean,
-    default: false,
+    default: false
   },
   verifyToken: String,
   verifyTokenExpiration: Date,
   forgotPasswordToken: String,
-  forgotPasswordTokenExpiration: Date,
+  forgotPasswordTokenExpiration: Date
 });
 
 export const User =
-  mongoose.models.users || mongoose.model("users", userSchema);
+  mongoose.models.users || mongoose.model('users', userSchema);

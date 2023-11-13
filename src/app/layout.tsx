@@ -1,6 +1,7 @@
 import '@/app/globals.css';
 import TanstackProvider from '@/providers/TanstackProvider';
 
+import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
@@ -22,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <TanstackProvider>
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<h1 className="text-yellow-700">Loading...</h1>}>
             {children}
             <ToastContainer />
           </Suspense>

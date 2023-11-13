@@ -1,8 +1,8 @@
-import { IUser } from "./types";
-import { User } from "@/models/User";
+import { IUser } from './types';
+import { User } from '@/models/User';
 
-import { NextResponse } from "next/server";
-import bcrypt from "bcrypt";
+// import { NextResponse } from 'next/server';
+import bcrypt from 'bcrypt';
 
 const createUser = async (user: IUser) => {
   // check if user already exists
@@ -20,7 +20,7 @@ const createUser = async (user: IUser) => {
   const newUser = new User({
     userName: user.userName,
     email: user.email,
-    password: hashedPassword,
+    password: hashedPassword
   });
 
   return newUser.save();

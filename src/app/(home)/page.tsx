@@ -1,7 +1,7 @@
-// import { CategoryCard } from './components/CategoryCard';
+import React from 'react';
 
 const Home = () => {
-  return <>{/* <CategoryCard /> */}</>;
+  return <p className="text-red-600">Hello</p>;
 };
 
 export default Home;

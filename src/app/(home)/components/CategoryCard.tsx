@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -48,8 +48,11 @@ export const CategoryCard: FC<CategoryCardProps> = ({ items }) => {
       <div className="pb-4 pt-1">
         <h3 className="py-4">Gaming accessories</h3>
         <div className="grid grid-cols-2 grid-rows-2 grid-flow-col gap-2">
-          {items.map((item) => (
-            <Item item={item} />
+          {items.map((item, index) => (
+            <Item
+              key={index}
+              item={item}
+            />
           ))}
         </div>
       </div>

@@ -1,28 +1,29 @@
-"use client";
-import { IUser } from "./types";
-import Toastify from "../../components/Toastify";
+'use client';
+import { IUser } from './types';
+import Toastify from '../../components/Toastify';
 
-import { useState } from "react";
-import axios from "axios";
+import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
 const Register = () => {
   const [user, setUser] = useState<IUser>({
     userName: null,
     email: null,
-    password: null,
+    password: null
   });
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { data } = await axios.post(`/api/user/register`, user);
+    const { data } = await axios.post('/api/user/register', user);
     Toastify.showServerResponse(data);
     if (data.success) {
       setUser({
         userName: null,
         email: null,
-        password: null,
+        password: null
       });
     }
     setLoading(false);
@@ -36,7 +37,7 @@ const Register = () => {
           required
           className="block border-2 border-slate-500 rounded mb-4"
           type="text"
-          value={user.userName || ""}
+          value={user.userName || ''}
           placeholder="Choose an user name"
           onChange={(e) => setUser({ ...user, userName: e.target.value })}
         />
@@ -44,7 +45,7 @@ const Register = () => {
           required
           className="block border-2 border-slate-500 rounded mb-4"
           type="email"
-          value={user.email || ""}
+          value={user.email || ''}
           placeholder="Email"
           onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
@@ -52,7 +53,7 @@ const Register = () => {
           required
           className="block border-2 border-slate-500 rounded"
           type="password"
-          value={user.password || ""}
+          value={user.password || ''}
           placeholder="Password"
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
@@ -62,7 +63,7 @@ const Register = () => {
             type="submit"
             className="mt-10 bg-orange-400 p-2 rounded"
           >
-            {!loading ? "Sign up" : "Processing..."}
+            {!loading ? 'Sign up' : 'Processing...'}
           </button>
         </div>
       </form>
