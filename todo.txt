@@ -1,1 +1,2 @@
-1. 
+# Configuration
+  - run 'yarn lint' on save
