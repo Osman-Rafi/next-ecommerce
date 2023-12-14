@@ -27,7 +27,7 @@ export default async function FeaturedCategories() {
     ]);
 
   return (
-    <div className="inline-grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 p-6">
+    <div className="inline-grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 p-6 w-full">
       {featuredCategories.map((item, index) => (
         <div
           key={index}
