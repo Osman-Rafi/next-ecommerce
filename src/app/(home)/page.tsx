@@ -1,7 +1,12 @@
-import React from 'react';
+import FeaturedCategories from '@/app/(home)/featured-categories';
 
 const Home = () => {
-  return <p className="text-red-600">Hello</p>;
+  return (
+    <div className="bg-slate-50">
+      <p>Home</p>
+      <FeaturedCategories />
+    </div>
+  );
 };
 
 export default Home;

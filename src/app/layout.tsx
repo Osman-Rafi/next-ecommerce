@@ -1,11 +1,10 @@
 import '@/app/globals.css';
-import TanstackProvider from '@/providers/TanstackProvider';
+import { Providers } from '@/utils/Providers';
 
-import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import React from 'react';
 import { ToastContainer } from 'react-toastify';
-import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,12 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TanstackProvider>
-          <Suspense fallback={<h1 className="text-yellow-700">Loading...</h1>}>
-            {children}
-            <ToastContainer />
-          </Suspense>
-        </TanstackProvider>
+        <Providers>
+          {children}
+          <ToastContainer />
+        </Providers>
       </body>
     </html>
   );
