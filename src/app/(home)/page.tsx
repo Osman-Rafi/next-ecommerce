@@ -2,7 +2,7 @@ import FeaturedCategories from '@/app/(home)/featured-categories';
 
 const Home = () => {
   return (
-    <div className="bg-slate-50">
+    <div>
       <p>Home</p>
       <FeaturedCategories />
     </div>

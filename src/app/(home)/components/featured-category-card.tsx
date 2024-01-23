@@ -13,11 +13,12 @@ const FeaturedCategoryCard = ({ category }: any) => {
   return (
     <div className="mt-3 px-3">
       <Image
-        className="w-full"
-        src="/assets/images/headphone.png"
+        className=""
+        src="/assets/images/headphone.jpg"
         alt={'image:' + category.name}
         width={100}
         height={100}
+        quality={90}
       />
       <p className="text-xs font-normal my-3">{category.name}</p>
     </div>

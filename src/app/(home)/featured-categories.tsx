@@ -36,11 +36,16 @@ export default async function FeaturedCategories() {
           <h3 className="text-lg font-semibold ml-3 mt-2">{item.title}</h3>
           <div className={gridCount(item.categories.length)}>
             {item.categories.map((category) => (
-              <FeaturedCategoryCard
+              <Link
                 key={category.id}
-                title="Test"
-                category={category}
-              />
+                href={`/${category.url}`}
+              >
+                <FeaturedCategoryCard
+                  key={category.id}
+                  title="Test"
+                  category={category}
+                />
+              </Link>
             ))}
           </div>
           <Link

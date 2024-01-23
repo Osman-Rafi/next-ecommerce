@@ -20,8 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-slate-50`}>
         <Providers>
+          <h1>Navbar</h1>
           {children}
           <ToastContainer />
         </Providers>
