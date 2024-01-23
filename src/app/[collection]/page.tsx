@@ -1,6 +1,6 @@
 import Grid from '@/components/ui/grid';
 import { PRODUCT_COLLECTIONS } from '@/config/navigations';
-import ProductOverview from './ProductOverview';
+import ProductOverview from './product-overview';
 import { IProductOverview } from './types';
 
 const getProductsCollection = async () => {
